@@ -1,22 +1,29 @@
 package loan;
 
-import java.time.format.DateTimeFormatter;
-import java.util.Date;
+
+import java.text.SimpleDateFormat;
+
  
 
 public class loanbasic {
 
-	String Name = "[a-zA-Z]" ;   
-	int AccountNo,Period;  
-		
+	String Name  ;   
+	public int AccountNo,year,Period,Month,day,fstyear;	
+	int endYear=fstyear+year;
+	String Sdate;
+	String Edate;
 	
-	Date date = new Date();
-	DateTimeFormatter myFormatObj = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	
 	double LoanAmm,RentalVa,InterestAmm,CapitalAmm,CapitalBal;
 	double Rate;
 	double MRate=Rate/1200;
 	
+	String Sdate(int fstyear,int Month,int day) {
+		return Sdate = day+"/"+Month+"/"+fstyear;
+	}
+	String Edate(int endYear,int Month,int day) {
+		return Edate = day+"/"+Month+"/"+endYear;
+	}
 	
 	
 	

@@ -20,15 +20,32 @@ public class mainclass {
 		All.LoanAmm = AsInput.nextDouble();
 		
 		
-		System.out.println("Enter your months");
-		 All.Period = AsInput.nextInt();
+		System.out.println("How many years for the loan: (eg:- 4 or 5)");
+		All.year=AsInput.nextInt();
+		All.Period=All.year*12;
+		 
 		 
 		 System.out.println("Enter your Rate");
 		 All.MRate = AsInput.nextDouble();
 		 
-		 System.out.println(All.Name);
-		 System.out.println(All.AccountNo);		
-		 System.out.println("your rental value is: " +All.RentalVa(All.LoanAmm,All.MRate, All.Period));		
+		 //......get date....//
+		 System.out.println("...Enter your loan state date... ");
+		 System.out.println("Enter year: ");
+		 All.fstyear=AsInput.nextInt();
+		 System.out.println("Enter Month: ");
+		 All.Month=AsInput.nextInt();
+		 System.out.println("Enter Day: ");
+		 All.day=AsInput.nextInt();
+		  All.endYear=All.fstyear+All.year; 
+		 
+		
+		 
+		 
+		 String head = "|%-8s|%-20s|%-12s|%-20s|%-12s|%-20s|%-12s|%-20s|%n";
+		 System.out.format("+--------+--------------------+------------+--------------------+------------+--------------------+------------+--------------------+%n");
+		 System.out.format(head,"Name ",All.Name, " Account No ",All.AccountNo,"State Date :",All.Sdate(All.fstyear, All.Month, All.day),"End Date :",All.Edate(All.endYear, All.Month,All.day));
+		 System.out.format("+--------+--------------------+------------+--------------------+------------+--------------------+------------+--------------------+%n");	
+		System.out.format(head, "Rental",All.RentalVa(All.LoanAmm,All.MRate, All.Period),"","","","","","");
 		
 		 
 		 
@@ -49,6 +66,7 @@ public class mainclass {
 		 }
 		 
 		 System.out.format("+--------+--------------------+---------------------+---------------------+----------------------+%n");
+		 
 		 
 		 
 		 AsInput.close();
