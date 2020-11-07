@@ -1,7 +1,7 @@
 package loan;
 
 
-import java.text.SimpleDateFormat;
+
 
  
 
@@ -16,7 +16,12 @@ public class loanbasic {
 	
 	double LoanAmm,RentalVa,InterestAmm,CapitalAmm,CapitalBal;
 	double Rate;
+	public double TtlIn,TtlRen,Ttlcap;
+	
 	double MRate=Rate/1200;
+	
+	
+	
 	
 	String Sdate(int fstyear,int Month,int day) {
 		return Sdate = day+"/"+Month+"/"+fstyear;
@@ -34,9 +39,11 @@ public class loanbasic {
 		
 	}
     
-       
     
+   public double TtlRen(int Period,double RentalVa) {
+    	return TtlRen=RentalVa*Period;
+    }
 	
-	
+    
 	
 }
